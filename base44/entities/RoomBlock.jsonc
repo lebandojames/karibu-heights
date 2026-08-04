@@ -1,0 +1,36 @@
+{
+  "name": "RoomBlock",
+  "type": "object",
+  "properties": {
+    "room_id": {
+      "type": "string"
+    },
+    "room_name": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "reason": {
+      "type": "string",
+      "enum": [
+        "maintenance",
+        "blocked"
+      ],
+      "default": "maintenance"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "room_id",
+    "start_date",
+    "end_date"
+  ]
+}

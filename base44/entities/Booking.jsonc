@@ -1,0 +1,96 @@
+{
+  "name": "Booking",
+  "type": "object",
+  "properties": {
+    "reference": {
+      "type": "string"
+    },
+    "room_id": {
+      "type": "string"
+    },
+    "room_name": {
+      "type": "string"
+    },
+    "guest_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "special_requests": {
+      "type": "string"
+    },
+    "check_in": {
+      "type": "string",
+      "format": "date"
+    },
+    "check_out": {
+      "type": "string",
+      "format": "date"
+    },
+    "adults": {
+      "type": "number",
+      "default": 2
+    },
+    "children": {
+      "type": "number",
+      "default": 0
+    },
+    "nights": {
+      "type": "number"
+    },
+    "price_per_night": {
+      "type": "number"
+    },
+    "subtotal": {
+      "type": "number"
+    },
+    "taxes": {
+      "type": "number"
+    },
+    "total": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "confirmed",
+        "rejected",
+        "checked_in",
+        "checked_out",
+        "cancelled"
+      ],
+      "default": "pending"
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "card_demo",
+        "mpesa_demo",
+        "bank_transfer",
+        "pay_on_arrival"
+      ],
+      "default": "pay_on_arrival"
+    },
+    "payment_status": {
+      "type": "string",
+      "enum": [
+        "unpaid",
+        "demo_paid"
+      ],
+      "default": "unpaid"
+    }
+  },
+  "required": [
+    "room_id",
+    "check_in",
+    "check_out"
+  ]
+}

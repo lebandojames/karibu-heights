@@ -7,6 +7,16 @@ import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
 // Add page imports here
+import SiteLayout from '@/components/site/SiteLayout';
+import Home from '@/pages/Home';
+import Rooms from '@/pages/Rooms';
+import RoomDetail from '@/pages/RoomDetail';
+import Booking from '@/pages/Booking';
+import Gallery from '@/pages/Gallery';
+import Conference from '@/pages/Conference';
+import Contact from '@/pages/Contact';
+import Policies from '@/pages/Policies';
+import Admin from '@/pages/Admin';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -35,6 +45,17 @@ const AuthenticatedApp = () => {
   return (
     <Routes>
       {/* Add your page Route elements here */}
+      <Route element={<SiteLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/rooms" element={<Rooms />} />
+        <Route path="/rooms/:id" element={<RoomDetail />} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/conference" element={<Conference />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/policies" element={<Policies />} />
+      </Route>
+      <Route path="/admin" element={<Admin />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
