@@ -20,6 +20,7 @@ export default function ExperienceStrip() {
               src={t.img}
               alt={`${t.title} at Karibu Heights Hotel, Nairobi`}
               className="w-full h-[320px] object-cover transition-transform duration-[1400ms] group-hover:scale-[1.08]"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1A1C1B]/80 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">

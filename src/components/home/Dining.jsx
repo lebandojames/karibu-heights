@@ -30,6 +30,7 @@ export default function Dining() {
                   src={v.img}
                   alt={v.alt}
                   className="w-full h-[240px] object-cover transition-transform duration-[1200ms] group-hover:scale-[1.06]"
+                  loading="lazy"
                 />
               </div>
               <div className="p-7">

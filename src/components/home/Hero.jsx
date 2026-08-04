@@ -13,6 +13,7 @@ export default function Hero() {
         src={IMG.exterior}
         alt="Karibu Heights Hotel exterior at dusk with warm light glowing from floor-to-ceiling windows"
         className="absolute inset-0 w-full h-full object-cover"
+        fetchpriority="high"
         initial={{ scale: 1.12 }}
         animate={{ scale: 1 }}
         transition={{ duration: 2.4, ease }}

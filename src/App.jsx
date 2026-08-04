@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
@@ -6,17 +7,17 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
-// Add page imports here
 import SiteLayout from '@/components/site/SiteLayout';
-import Home from '@/pages/Home';
-import Rooms from '@/pages/Rooms';
-import RoomDetail from '@/pages/RoomDetail';
-import Booking from '@/pages/Booking';
-import Gallery from '@/pages/Gallery';
-import Conference from '@/pages/Conference';
-import Contact from '@/pages/Contact';
-import Policies from '@/pages/Policies';
-import Admin from '@/pages/Admin';
+// Lazy-load page components so each route ships as its own chunk
+const Home = lazy(() => import('@/pages/Home'));
+const Rooms = lazy(() => import('@/pages/Rooms'));
+const RoomDetail = lazy(() => import('@/pages/RoomDetail'));
+const Booking = lazy(() => import('@/pages/Booking'));
+const Gallery = lazy(() => import('@/pages/Gallery'));
+const Conference = lazy(() => import('@/pages/Conference'));
+const Contact = lazy(() => import('@/pages/Contact'));
+const Policies = lazy(() => import('@/pages/Policies'));
+const Admin = lazy(() => import('@/pages/Admin'));
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -43,6 +44,7 @@ const AuthenticatedApp = () => {
 
   // Render the main app
   return (
+    <Suspense fallback={<div className="fixed inset-0 grid place-items-center bg-[#F9F7F2]"><div className="w-7 h-7 border-2 border-black/10 border-t-[#2D5A43] rounded-full animate-spin" /></div>}>
     <Routes>
       {/* Add your page Route elements here */}
       <Route element={<SiteLayout />}>
@@ -58,6 +60,7 @@ const AuthenticatedApp = () => {
       <Route path="/admin" element={<Admin />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
+    </Suspense>
   );
 };
 

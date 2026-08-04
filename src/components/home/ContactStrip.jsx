@@ -10,6 +10,7 @@ export default function ContactStrip() {
         src={IMG.honeymoon}
         alt="Honeymoon suite with canopy bed and stone bathtub overlooking the Kenyan hills at sunset"
         className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
       />
       <div className="absolute inset-0 bg-[#1A1C1B]/70" />
       <div className="relative shell py-28 md:py-40 text-center flex flex-col items-center">

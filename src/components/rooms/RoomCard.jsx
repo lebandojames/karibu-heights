@@ -11,6 +11,7 @@ export default function RoomCard({ room, footer, query = "" }) {
           src={(room.images && room.images[0]) || ""}
           alt={`${room.name} at Karibu Heights Hotel, Nairobi`}
           className="w-full h-[260px] md:h-[300px] object-cover transition-transform duration-[1200ms] group-hover:scale-[1.06]"
+          loading="lazy"
         />
         <div className="absolute top-4 left-4 rounded-full glass px-4 py-1.5 text-[11px] tracking-[0.14em] uppercase">
           {fmt(room.price_per_night)} / night

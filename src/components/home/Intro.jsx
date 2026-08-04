@@ -35,6 +35,7 @@ export default function Intro() {
             src={IMG.reception}
             alt="Double-height reception lobby with carved timber desk and woven pendant lights at Karibu Heights"
             className="w-full h-[300px] md:h-[360px] object-cover rounded-[24px]"
+            loading="lazy"
           />
         </Reveal>
         <Reveal delay={0.1}>
@@ -42,6 +43,7 @@ export default function Intro() {
             src={IMG.garden}
             alt="Manicured tropical gardens with stone pathways at Karibu Heights Hotel"
             className="w-full h-[200px] object-cover rounded-[24px]"
+            loading="lazy"
           />
         </Reveal>
         <Reveal delay={0.18}>
@@ -49,6 +51,7 @@ export default function Intro() {
             src={IMG.spa}
             alt="Stone massage table with rising steam in the Karibu Heights spa"
             className="w-full h-[200px] object-cover rounded-[24px]"
+            loading="lazy"
           />
         </Reveal>
       </div>
