@@ -21,8 +21,8 @@ export default function RoomDetail() {
       if (!found) return setNotFound(true);
       setRoom(found);
       const [b, bl] = await Promise.all([
-        base44.entities.Booking.filter({ room_id: id }, "-created_date", 300),
-        base44.entities.RoomBlock.filter({ room_id: id }, "-created_date", 200),
+        base44.entities.Booking.filter({ room_id: id }, "-created_date", 20),
+        base44.entities.RoomBlock.filter({ room_id: id }, "-created_date", 20),
       ]);
       setBookings(b);
       setBlocks(bl);

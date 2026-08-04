@@ -37,8 +37,8 @@ export default function Booking() {
     (async () => {
       const [r, b, bl] = await Promise.all([
         base44.entities.Room.filter({ status: "active" }, "sort_order"),
-        base44.entities.Booking.list("-created_date", 500),
-        base44.entities.RoomBlock.list("-created_date", 300),
+        base44.entities.Booking.list("-created_date", 20),
+        base44.entities.RoomBlock.list("-created_date", 20),
       ]);
       setRooms(r);
       setBookings(b);
