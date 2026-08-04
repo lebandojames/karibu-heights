@@ -1,5 +1,6 @@
 import React from "react";
 import { IMG } from "@/lib/hotel";
+import { Image } from "@/components/ui/image";
 import Reveal from "@/components/site/Reveal";
 import SectionHeading from "@/components/site/SectionHeading";
 
@@ -31,7 +32,7 @@ export default function Intro() {
       </div>
       <div className="grid grid-cols-2 gap-5">
         <Reveal className="col-span-2">
-          <img
+          <Image
             src={IMG.reception}
             alt="Double-height reception lobby with carved timber desk and woven pendant lights at Karibu Heights"
             className="w-full h-[300px] md:h-[360px] object-cover rounded-[24px]"
@@ -39,7 +40,7 @@ export default function Intro() {
           />
         </Reveal>
         <Reveal delay={0.1}>
-          <img
+          <Image
             src={IMG.garden}
             alt="Manicured tropical gardens with stone pathways at Karibu Heights Hotel"
             className="w-full h-[200px] object-cover rounded-[24px]"
@@ -47,7 +48,7 @@ export default function Intro() {
           />
         </Reveal>
         <Reveal delay={0.18}>
-          <img
+          <Image
             src={IMG.spa}
             alt="Stone massage table with rising steam in the Karibu Heights spa"
             className="w-full h-[200px] object-cover rounded-[24px]"

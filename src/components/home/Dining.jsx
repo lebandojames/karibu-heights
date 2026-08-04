@@ -1,5 +1,6 @@
 import React from "react";
 import { IMG } from "@/lib/hotel";
+import { Image } from "@/components/ui/image";
 import Reveal from "@/components/site/Reveal";
 import SectionHeading from "@/components/site/SectionHeading";
 
@@ -26,7 +27,7 @@ export default function Dining() {
           <Reveal key={v.title} delay={(i % 3) * 0.08}>
             <div className="group rounded-[24px] overflow-hidden bg-white border border-black/5">
               <div className="overflow-hidden">
-                <img
+                <Image
                   src={v.img}
                   alt={v.alt}
                   className="w-full h-[240px] object-cover transition-transform duration-[1200ms] group-hover:scale-[1.06]"

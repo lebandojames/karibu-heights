@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { HOTEL, IMG } from "@/lib/hotel";
+import { Image } from "@/components/ui/image";
 import Reveal from "@/components/site/Reveal";
 
 export default function ContactStrip() {
   return (
     <section className="relative overflow-hidden">
-      <img
+      <Image
         src={IMG.honeymoon}
         alt="Honeymoon suite with canopy bed and stone bathtub overlooking the Kenyan hills at sunset"
         className="absolute inset-0 w-full h-full object-cover"

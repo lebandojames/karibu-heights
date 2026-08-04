@@ -3,21 +3,26 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowDownRight } from "lucide-react";
 import { IMG } from "@/lib/hotel";
+import { Image } from "@/components/ui/image";
 
 const ease = [0.16, 1, 0.3, 1];
 
 export default function Hero() {
   return (
     <section className="relative min-h-[100svh] w-full overflow-hidden">
-      <motion.img
-        src={IMG.exterior}
-        alt="Karibu Heights Hotel exterior at dusk with warm light glowing from floor-to-ceiling windows"
-        className="absolute inset-0 w-full h-full object-cover"
-        fetchpriority="high"
+      <motion.div
+        className="absolute inset-0 w-full h-full"
         initial={{ scale: 1.12 }}
         animate={{ scale: 1 }}
         transition={{ duration: 2.4, ease }}
-      />
+      >
+        <Image
+          src={IMG.exterior}
+          alt="Karibu Heights Hotel exterior at dusk with warm light glowing from floor-to-ceiling windows"
+          className="w-full h-full object-cover"
+          fittingType="fill"
+        />
+      </motion.div>
       <div className="absolute inset-0 bg-gradient-to-b from-[#1A1C1B]/70 via-[#1A1C1B]/35 to-[#1A1C1B]/80" />
 
       <div className="relative z-10 min-h-[100svh] shell flex flex-col justify-between pt-32 pb-16">

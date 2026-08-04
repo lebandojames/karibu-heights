@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { IMG } from "@/lib/hotel";
+import { Image } from "@/components/ui/image";
 import Reveal from "@/components/site/Reveal";
 
 const TILES = [
@@ -16,7 +17,7 @@ export default function ExperienceStrip() {
       {TILES.map((t, i) => (
         <Reveal key={t.title} delay={i * 0.07}>
           <Link to={t.to} className="group block relative rounded-[24px] overflow-hidden">
-            <img
+            <Image
               src={t.img}
               alt={`${t.title} at Karibu Heights Hotel, Nairobi`}
               className="w-full h-[320px] object-cover transition-transform duration-[1400ms] group-hover:scale-[1.08]"

@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Maximize, Users, BedDouble } from "lucide-react";
 import { fmt } from "@/lib/hotel";
+import { Image } from "@/components/ui/image";
 
 export default function RoomCard({ room, footer, query = "" }) {
   return (
     <article className="group rounded-[24px] bg-white border border-black/5 overflow-hidden flex flex-col shadow-[0_20px_60px_-45px_rgba(26,28,27,0.5)] hover:shadow-[0_30px_80px_-40px_rgba(26,28,27,0.4)] transition-shadow duration-500">
       <div className="relative overflow-hidden">
-        <img
+        <Image
           src={(room.images && room.images[0]) || ""}
           alt={`${room.name} at Karibu Heights Hotel, Nairobi`}
           className="w-full h-[260px] md:h-[300px] object-cover transition-transform duration-[1200ms] group-hover:scale-[1.06]"
